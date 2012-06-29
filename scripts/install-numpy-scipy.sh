@@ -62,3 +62,5 @@ python setup.py install --prefix=/usr/local/scipy-0.9.0rc3 2>&1 | tee log.instal
 cd /usr/local ; ln -s scipy-0.9.0rc3 scipy
 
 echo $?
+
+export PYTHONPATH=$PYTHONPATH:/usr/local/numpy/lib64/python2.6/site-packages:/usr/local/scipy/lib64/python2.6/site-packages
