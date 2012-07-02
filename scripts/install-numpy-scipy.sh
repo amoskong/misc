@@ -4,6 +4,7 @@
 # reference:
 #   http://idolinux.blogspot.com.au/2011/02/atlas-numpy-scipy-build-on-rhel-6.html
 
+echo "request tools: gcc-gfortran (gfortran), gnome-applets (cpufreq-selector) gcc-c++ (g++)"
 yum install gcc-gfortran gnome-applets gcc-c++
 
 cd /usr/local/src
