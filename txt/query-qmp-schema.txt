@@ -1,0 +1,3512 @@
+{
+    "QMP": {
+        "version": {
+            "qemu": {
+                "micro": 50, 
+                "minor": 5, 
+                "major": 1
+            }, 
+            "package": ""
+        }, 
+        "capabilities": [
+        ]
+    }
+}
+{
+    "return": {
+    }
+}
+{
+    "return": [
+        {
+            "name": "add_client", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "skipauth", 
+                    "optional": true, 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "protocol", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "fdname", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "tls", 
+                    "optional": true, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "query-name", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "name", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-version", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "qemu", 
+                    "data": [
+                        {
+                            "key": "micro", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "minor", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "major", 
+                            "type": "int"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "package", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-kvm", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "enabled", 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "present", 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "query-status", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "status", 
+                    "type": "RunState", 
+                    "data": [
+                        {
+                            "type": "debug"
+                        }, 
+                        {
+                            "type": "inmigrate"
+                        }, 
+                        {
+                            "type": "internal-error"
+                        }, 
+                        {
+                            "type": "io-error"
+                        }, 
+                        {
+                            "type": "paused"
+                        }, 
+                        {
+                            "type": "postmigrate"
+                        }, 
+                        {
+                            "type": "prelaunch"
+                        }, 
+                        {
+                            "type": "finish-migrate"
+                        }, 
+                        {
+                            "type": "restore-vm"
+                        }, 
+                        {
+                            "type": "running"
+                        }, 
+                        {
+                            "type": "save-vm"
+                        }, 
+                        {
+                            "type": "shutdown"
+                        }, 
+                        {
+                            "type": "suspended"
+                        }, 
+                        {
+                            "type": "watchdog"
+                        }, 
+                        {
+                            "type": "guest-panicked"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "singlestep", 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "running", 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "query-uuid", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "UUID", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-chardev", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "ChardevInfo", 
+                    "data": [
+                        {
+                            "key": "filename", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "label", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "ringbuf-write", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "format", 
+                    "optional": true, 
+                    "type": "DataFormat", 
+                    "data": [
+                        {
+                            "type": "utf8"
+                        }, 
+                        {
+                            "type": "base64"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "data", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "ringbuf-read", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "str"
+                }
+            ], 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "format", 
+                    "optional": true, 
+                    "type": "DataFormat", 
+                    "data": [
+                        {
+                            "type": "utf8"
+                        }, 
+                        {
+                            "type": "base64"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "size", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "query-commands", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "CommandInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-events", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "EventInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-migrate", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "disk", 
+                    "optional": true, 
+                    "type": "MigrationStats", 
+                    "data": [
+                        {
+                            "key": "total", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "remaining", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "mbps", 
+                            "type": "number"
+                        }, 
+                        {
+                            "key": "transferred", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "duplicate", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "dirty-pages-rate", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "skipped", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "normal-bytes", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "normal", 
+                            "type": "int"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "xbzrle-cache", 
+                    "optional": true, 
+                    "type": "XBZRLECacheStats", 
+                    "data": [
+                        {
+                            "key": "bytes", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "cache-size", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "pages", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "overflow", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "cache-miss", 
+                            "type": "int"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "downtime", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "expected-downtime", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "status", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "ram", 
+                    "optional": true, 
+                    "type": "MigrationStats", 
+                    "data": [
+                        {
+                            "key": "total", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "remaining", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "mbps", 
+                            "type": "number"
+                        }, 
+                        {
+                            "key": "transferred", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "duplicate", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "dirty-pages-rate", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "skipped", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "normal-bytes", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "normal", 
+                            "type": "int"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "total-time", 
+                    "optional": true, 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "migrate-set-capabilities", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "capabilities", 
+                    "data": [
+                        {
+                            "type": "MigrationCapabilityStatus", 
+                            "data": [
+                                {
+                                    "key": "state", 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "capability", 
+                                    "type": "MigrationCapability", 
+                                    "data": [
+                                        {
+                                            "type": "xbzrle"
+                                        }, 
+                                        {
+                                            "type": "x-rdma-pin-all"
+                                        }, 
+                                        {
+                                            "type": "auto-converge"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-migrate-capabilities", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "MigrationCapabilityStatus", 
+                    "data": [
+                        {
+                            "key": "state", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "capability", 
+                            "type": "MigrationCapability", 
+                            "data": [
+                                {
+                                    "type": "xbzrle"
+                                }, 
+                                {
+                                    "type": "x-rdma-pin-all"
+                                }, 
+                                {
+                                    "type": "auto-converge"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-mice", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "MouseInfo", 
+                    "data": [
+                        {
+                            "key": "index", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "current", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "absolute", 
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-cpus", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "CpuInfo", 
+                    "data": [
+                        {
+                            "key": "PC", 
+                            "optional": true, 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "pc", 
+                            "optional": true, 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "current", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "CPU", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "halted", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "npc", 
+                            "optional": true, 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "nip", 
+                            "optional": true, 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "thread_id", 
+                            "type": "int"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-block", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "BlockInfo", 
+                    "data": [
+                        {
+                            "key": "device", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "locked", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "removable", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "dirty", 
+                            "optional": true, 
+                            "type": "BlockDirtyInfo", 
+                            "data": [
+                                {
+                                    "key": "granularity", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "count", 
+                                    "type": "int"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "io-status", 
+                            "optional": true, 
+                            "type": "BlockDeviceIoStatus", 
+                            "data": [
+                                {
+                                    "type": "ok"
+                                }, 
+                                {
+                                    "type": "failed"
+                                }, 
+                                {
+                                    "type": "nospace"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "tray_open", 
+                            "optional": true, 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "type", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "inserted", 
+                            "optional": true, 
+                            "type": "BlockDeviceInfo", 
+                            "data": [
+                                {
+                                    "key": "iops_rd", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "backing_file", 
+                                    "optional": true, 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "image", 
+                                    "type": "ImageInfo", 
+                                    "data": [
+                                        {
+                                            "key": "backing-filename", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "actual-size", 
+                                            "optional": true, 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "backing-image", 
+                                            "optional": true, 
+                                            "type": "ImageInfo"
+                                        }, 
+                                        {
+                                            "key": "full-backing-filename", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "cluster-size", 
+                                            "optional": true, 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "virtual-size", 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "filename", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "encrypted", 
+                                            "optional": true, 
+                                            "type": "bool"
+                                        }, 
+                                        {
+                                            "key": "format", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "snapshots", 
+                                            "optional": true, 
+                                            "data": [
+                                                {
+                                                    "type": "SnapshotInfo", 
+                                                    "data": [
+                                                        {
+                                                            "key": "vm-clock-nsec", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "name", 
+                                                            "type": "str"
+                                                        }, 
+                                                        {
+                                                            "key": "date-sec", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "date-nsec", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "vm-clock-sec", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "id", 
+                                                            "type": "str"
+                                                        }, 
+                                                        {
+                                                            "key": "vm-state-size", 
+                                                            "type": "int"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "backing-filename-format", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "dirty-flag", 
+                                            "optional": true, 
+                                            "type": "bool"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "key": "iops_wr", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "ro", 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "backing_file_depth", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "drv", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "iops", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "bps_wr", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "encrypted", 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "bps", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "bps_rd", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "file", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "encryption_key_missing", 
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-blockstats", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "BlockStats", 
+                    "data": [
+                        {
+                            "key": "stats", 
+                            "type": "BlockDeviceStats", 
+                            "data": [
+                                {
+                                    "key": "flush_total_time_ns", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "wr_highest_offset", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "wr_total_time_ns", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "wr_bytes", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "rd_total_time_ns", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "flush_operations", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "wr_operations", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "rd_bytes", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "rd_operations", 
+                                    "type": "int"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "device", 
+                            "optional": true, 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "parent", 
+                            "optional": true, 
+                            "type": "BlockStats"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-vnc", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "clients", 
+                    "optional": true, 
+                    "data": [
+                        {
+                            "type": "VncClientInfo", 
+                            "data": [
+                                {
+                                    "key": "family", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "sasl_username", 
+                                    "optional": true, 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "service", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "host", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "x509_dname", 
+                                    "optional": true, 
+                                    "type": "str"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "key": "family", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "enabled", 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "service", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "host", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "auth", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-spice", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "migrated", 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "enabled", 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "port", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "channels", 
+                    "optional": true, 
+                    "data": [
+                        {
+                            "type": "SpiceChannel", 
+                            "data": [
+                                {
+                                    "key": "port", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "family", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "channel-type", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "connection-id", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "host", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "channel-id", 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "tls", 
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "key": "compiled-version", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "mouse-mode", 
+                    "type": "SpiceQueryMouseMode", 
+                    "data": [
+                        {
+                            "type": "client"
+                        }, 
+                        {
+                            "type": "server"
+                        }, 
+                        {
+                            "type": "unknown"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "tls-port", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "host", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "auth", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-balloon", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "actual", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "query-pci", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "PciInfo", 
+                    "data": [
+                        {
+                            "key": "bus", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "devices", 
+                            "data": [
+                                {
+                                    "type": "PciDeviceInfo", 
+                                    "data": [
+                                        {
+                                            "key": "bus", 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "irq", 
+                                            "optional": true, 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "qdev_id", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "slot", 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "pci_bridge", 
+                                            "optional": true, 
+                                            "type": "PciBridgeInfo", 
+                                            "data": [
+                                                {
+                                                    "key": "bus", 
+                                                    "data": [
+                                                        {
+                                                            "key": "prefetchable_range", 
+                                                            "type": "PciMemoryRange", 
+                                                            "data": [
+                                                                {
+                                                                    "key": "limit", 
+                                                                    "type": "int"
+                                                                }, 
+                                                                {
+                                                                    "key": "base", 
+                                                                    "type": "int"
+                                                                }
+                                                            ]
+                                                        }, 
+                                                        {
+                                                            "key": "memory_range", 
+                                                            "type": "PciMemoryRange", 
+                                                            "data": [
+                                                                {
+                                                                    "key": "limit", 
+                                                                    "type": "int"
+                                                                }, 
+                                                                {
+                                                                    "key": "base", 
+                                                                    "type": "int"
+                                                                }
+                                                            ]
+                                                        }, 
+                                                        {
+                                                            "key": "secondary", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "io_range", 
+                                                            "type": "PciMemoryRange", 
+                                                            "data": [
+                                                                {
+                                                                    "key": "limit", 
+                                                                    "type": "int"
+                                                                }, 
+                                                                {
+                                                                    "key": "base", 
+                                                                    "type": "int"
+                                                                }
+                                                            ]
+                                                        }, 
+                                                        {
+                                                            "key": "number", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "subordinate", 
+                                                            "type": "int"
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "key": "devices", 
+                                                    "optional": true, 
+                                                    "data": [
+                                                        {
+                                                            "type": "PciDeviceInfo"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "class_info", 
+                                            "data": [
+                                                {
+                                                    "key": "desc", 
+                                                    "optional": true, 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "class", 
+                                                    "type": "int"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "id", 
+                                            "data": [
+                                                {
+                                                    "key": "device", 
+                                                    "type": "int"
+                                                }, 
+                                                {
+                                                    "key": "vendor", 
+                                                    "type": "int"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "function", 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "regions", 
+                                            "data": [
+                                                {
+                                                    "type": "PciMemoryRegion", 
+                                                    "data": [
+                                                        {
+                                                            "key": "prefetch", 
+                                                            "optional": true, 
+                                                            "type": "bool"
+                                                        }, 
+                                                        {
+                                                            "key": "bar", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "size", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "mem_type_64", 
+                                                            "optional": true, 
+                                                            "type": "bool"
+                                                        }, 
+                                                        {
+                                                            "key": "address", 
+                                                            "type": "int"
+                                                        }, 
+                                                        {
+                                                            "key": "type", 
+                                                            "type": "str"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-block-jobs", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "BlockJobInfo", 
+                    "data": [
+                        {
+                            "key": "io-status", 
+                            "type": "BlockDeviceIoStatus", 
+                            "data": [
+                                {
+                                    "type": "ok"
+                                }, 
+                                {
+                                    "type": "failed"
+                                }, 
+                                {
+                                    "type": "nospace"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "device", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "busy", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "len", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "offset", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "paused", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "speed", 
+                            "type": "int"
+                        }, 
+                        {
+                            "key": "type", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "quit", 
+            "type": "Command"
+        }, 
+        {
+            "name": "stop", 
+            "type": "Command"
+        }, 
+        {
+            "name": "system_reset", 
+            "type": "Command"
+        }, 
+        {
+            "name": "system_powerdown", 
+            "type": "Command"
+        }, 
+        {
+            "name": "cpu", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "index", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "cpu-add", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "id", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "memsave", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "filename", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "size", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "val", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "cpu-index", 
+                    "optional": true, 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "pmemsave", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "filename", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "size", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "val", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "cont", 
+            "type": "Command"
+        }, 
+        {
+            "name": "system_wakeup", 
+            "type": "Command"
+        }, 
+        {
+            "name": "inject-nmi", 
+            "type": "Command"
+        }, 
+        {
+            "name": "set_link", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "name", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "up", 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "block_passwd", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "password", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "balloon", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "value", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "block_resize", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "size", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "transaction", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "actions", 
+                    "data": [
+                        {
+                            "type": "TransactionAction", 
+                            "data": [
+                                {
+                                    "key": "abort", 
+                                    "type": "Abort"
+                                }, 
+                                {
+                                    "key": "blockdev-snapshot-sync", 
+                                    "type": "BlockdevSnapshot", 
+                                    "data": [
+                                        {
+                                            "key": "device", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "mode", 
+                                            "optional": true, 
+                                            "type": "NewImageMode", 
+                                            "data": [
+                                                {
+                                                    "type": "existing"
+                                                }, 
+                                                {
+                                                    "type": "absolute-paths"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "format", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "snapshot-file", 
+                                            "type": "str"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "key": "drive-backup", 
+                                    "type": "DriveBackup", 
+                                    "data": [
+                                        {
+                                            "key": "device", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "speed", 
+                                            "optional": true, 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "mode", 
+                                            "optional": true, 
+                                            "type": "NewImageMode", 
+                                            "data": [
+                                                {
+                                                    "type": "existing"
+                                                }, 
+                                                {
+                                                    "type": "absolute-paths"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "format", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "on-source-error", 
+                                            "optional": true, 
+                                            "type": "BlockdevOnError", 
+                                            "data": [
+                                                {
+                                                    "type": "report"
+                                                }, 
+                                                {
+                                                    "type": "ignore"
+                                                }, 
+                                                {
+                                                    "type": "enospc"
+                                                }, 
+                                                {
+                                                    "type": "stop"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "on-target-error", 
+                                            "optional": true, 
+                                            "type": "BlockdevOnError", 
+                                            "data": [
+                                                {
+                                                    "type": "report"
+                                                 }, 
+                                                {
+                                                    "type": "ignore"
+                                                }, 
+                                                {
+                                                    "type": "enospc"
+                                                }, 
+                                                {
+                                                    "type": "stop"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "sync", 
+                                            "type": "MirrorSyncMode", 
+                                            "data": [
+                                                {
+                                                    "type": "top"
+                                                }, 
+                                                {
+                                                    "type": "full"
+                                                }, 
+                                                {
+                                                    "type": "none"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "target", 
+                                            "type": "str"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "blockdev-snapshot-sync", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "mode", 
+                    "optional": true, 
+                    "type": "NewImageMode", 
+                    "data": [
+                        {
+                            "type": "existing"
+                        }, 
+                        {
+                            "type": "absolute-paths"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "format", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "snapshot-file", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "human-monitor-command", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "str"
+                }
+            ], 
+            "data": [
+                {
+                    "key": "command-line", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "cpu-index", 
+                    "optional": true, 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "block-commit", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "speed", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "base", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "top", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "drive-backup", 
+            "type":  "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "speed", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "mode", 
+                    "optional": true, 
+                    "type": "NewImageMode", 
+                    "data": [
+                        {
+                            "type": "existing"
+                        }, 
+                        {
+                            "type": "absolute-paths"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "format", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "on-source-error", 
+                    "optional": true, 
+                    "type": "BlockdevOnError", 
+                    "data": [
+                        {
+                            "type": "report"
+                        }, 
+                        {
+                            "type": "ignore"
+                        }, 
+                        {
+                            "type": "enospc"
+                        }, 
+                        {
+                            "type": "stop"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "on-target-error", 
+                    "optional": true, 
+                    "type": "BlockdevOnError", 
+                    "data": [
+                        {
+                            "type": "report"
+                        }, 
+                        {
+                            "type": "ignore"
+                        }, 
+                        {
+                            "type": "enospc"
+                        }, 
+                        {
+                             "type": "stop"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "sync", 
+                    "type": "MirrorSyncMode", 
+                    "data": [
+                        {
+                            "type": "top"
+                        }, 
+                        {
+                            "type": "full"
+                        }, 
+                        {
+                            "type": "none"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "target", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "drive-mirror", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "speed", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "mode", 
+                    "optional": true, 
+                    "type": "NewImageMode", 
+                    "data": [
+                        {
+                            "type": "existing"
+                        }, 
+                        {
+                            "type": "absolute-paths"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "buf-size", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "format", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "on-source-error", 
+                    "optional": true, 
+                    "type": "BlockdevOnError", 
+                    "data": [
+                        { 
+                            "type": "report"
+                        }, 
+                        {
+                            "type": "ignore"
+                        }, 
+                        {
+                            "type": "enospc"
+                        }, 
+                        {
+                            "type": "stop"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "on-target-error", 
+                    "optional": true, 
+                    "type": "BlockdevOnError", 
+                    "data": [
+                        {
+                            "type": "report"
+                        }, 
+                        {
+                            "type": "ignore"
+                        }, 
+                        {
+                            "type": "enospc"
+                        }, 
+                        {
+                            "type": "stop"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "sync", 
+                    "type": "MirrorSyncMode", 
+                    "data": [
+                        {
+                            "type": "top"
+                        }, 
+                        {
+                            "type": "full"
+                        }, 
+                        {
+                            "type": "none"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "granularity", 
+                    "optional": true, 
+                    "type": "uint32"
+                }, 
+                {
+                    "key": "target", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "migrate_cancel", 
+            "type": "Command"
+        }, 
+        {
+            "name": "migrate_set_downtime", 
+            "type": "Command", 
+            "data": [
+                 {
+                    "key": "value", 
+                    "type": "number"
+                }
+            ]
+        }, 
+        {
+            "name": "migrate_set_speed", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "value", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "migrate-set-cache-size", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "value", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "query-migrate-cache-size", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "qom-list", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "ObjectPropertyInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "type", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ], 
+            "data": [
+                {
+                    "key": "path", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "qom-get", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "visitor"
+                }
+            ], 
+            "data": [
+                {
+                    "key": "path", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "property", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "qom-set", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "path", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "property", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "value", 
+                    "type": "visitor"
+                }
+            ]
+        }, 
+        {
+            "name": "set_password", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "connected", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "protocol", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "password", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "expire_password", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "protocol", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "time", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "eject", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "force", 
+                    "optional": true, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "change-vnc-password", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "password", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "change", 
+             "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "arg", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "target", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "block_set_io_throttle", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "iops_rd", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "iops_wr", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "iops", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "bps_wr", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "bps", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "bps_rd", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "block-stream", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "speed", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "on-error", 
+                    "optional": true, 
+                    "type": "BlockdevOnError", 
+                    "data": [
+                        {
+                            "type": "report"
+                        }, 
+                         {
+                            "type": "ignore"
+                        }, 
+                        {
+                            "type": "enospc"
+                        }, 
+                        {
+                            "type": "stop"
+                        }
+                    ]
+                }, 
+                {
+                    "key": "base", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "block-job-set-speed", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "speed", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "block-job-cancel", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "force", 
+                    "optional": true, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "block-job-pause", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "block-job-resume", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "block-job-complete", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+             "name": "qom-list-types", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "ObjectTypeInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ], 
+            "data": [
+                {
+                    "key": "implements", 
+                    "optional": true, 
+                    "type": "str"
+                }, 
+                {
+                    "key": "abstract", 
+                    "optional": true, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "device-list-properties", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "DevicePropertyInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "type", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ], 
+            "data": [
+                {
+                    "key": "typename", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "migrate", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "uri", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "inc", 
+                    "optional": true, 
+                    "type": "bool"
+                }, 
+                {
+                    "key": "detach", 
+                    "optional": true, 
+                    "type": "bool"
+                }, 
+                {
+                     "key": "blk", 
+                    "optional": true, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "xen-save-devices-state", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "filename", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "xen-set-global-dirty-log", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "enable", 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "device_del", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "id", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "dump-guest-memory", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "length", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "protocol", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "begin", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "paging", 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "netdev_add", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "props", 
+                    "optional": true, 
+                    "type": "**"
+                }, 
+                {
+                    "key": "type", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "id", 
+                    "type": "str"
+                }
+             ]
+        }, 
+        {
+            "name": "netdev_del", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "id", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "getfd", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "fdname", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "closefd", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "fdname", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-machines", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "MachineInfo", 
+                    "data": [
+                        {
+                            "key": "alias", 
+                            "optional": true, 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "is-default", 
+                            "optional": true, 
+                            "type": "bool"
+                        }, 
+                        {
+                            "key": "cpu-max", 
+                            "type": "int"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-cpu-definitions", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "CpuDefinitionInfo", 
+                    "data": [
+                        {
+                            "key": "name", 
+                            "type": "str"
+                         }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "add-fd", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "fd", 
+                    "type": "int"
+                }, 
+                {
+                    "key": "fdset-id", 
+                    "type": "int"
+                }
+            ], 
+            "data": [
+                {
+                    "key": "fdset-id", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "opaque", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "remove-fd", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "fd", 
+                    "optional": true, 
+                    "type": "int"
+                }, 
+                {
+                    "key": "fdset-id", 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "query-fdsets", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "FdsetInfo", 
+                    "data": [
+                        {
+                            "key": "fds", 
+                            "data": [
+                                {
+                                    "type": "FdsetFdInfo", 
+                                    "data": [
+                                        {
+                                            "key": "fd", 
+                                            "type": "int"
+                                        }, 
+                                        {
+                                            "key": "opaque", 
+                                            "optional": true, 
+                                            " type": "str"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "fdset-id", 
+                            "type": "int"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-target", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "arch", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "send-key", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "keys", 
+                    "data": [
+                        {
+                            "type": "KeyValue", 
+                            "data": [
+                                {
+                                    "key": "qcode", 
+                                    "type": "QKeyCode", 
+                                    "data": [
+                                        {
+                                            "type": "shift"
+                                        }, 
+                                        {
+                                            "type": "shift_r"
+                                        }, 
+                                        {
+                                            "type": "alt"
+                                        }, 
+                                        {
+                                            "type": "alt_r"
+                                        }, 
+                                        {
+                                            "type": "altgr"
+                                        }, 
+                                        {
+                                            "type": "altgr_r"
+                                        }, 
+                                         {
+                                            "type": "ctrl"
+                                        }, 
+                                        {
+                                            "type": "ctrl_r"
+                                        }, 
+                                        {
+                                            "type": "menu"
+                                        }, 
+                                        {
+                                            "type": "esc"
+                                        }, 
+                                        {
+                                            "type": "1"
+                                        }, 
+                                        {
+                                            "type": "2"
+                                        }, 
+                                        {
+                                            "type": "3"
+                                        }, 
+                                        {
+                                            "type": "4"
+                                        }, 
+                                        {
+                                            "type": "5"
+                                        }, 
+                                        {
+                                            "type": "6"
+                                        }, 
+                                        {
+                                            "type": "7"
+                                        }, 
+                                        {
+                                            "type": "8"
+                                        }, 
+                                        {
+                                            "type": "9"
+                                        }, 
+                                        {
+                                            "type": "0"
+                                        }, 
+                                         {
+                                            "type": "minus"
+                                        }, 
+                                        {
+                                            "type": "equal"
+                                        }, 
+                                        {
+                                            "type": "backspace"
+                                        }, 
+                                        {
+                                            "type": "tab"
+                                        }, 
+                                        {
+                                            "type": "q"
+                                        }, 
+                                        {
+                                            "type": "w"
+                                        }, 
+                                        {
+                                            "type": "e"
+                                        }, 
+                                        {
+                                            "type": "r"
+                                        }, 
+                                        {
+                                            "type": "t"
+                                        }, 
+                                        {
+                                            "type": "y"
+                                        }, 
+                                        {
+                                            "type": "u"
+                                        }, 
+                                        {
+                                            "type": "i"
+                                        }, 
+                                        {
+                                            "type": "o"
+                                        }, 
+                                        {
+                                            "type": "p"
+                                        }, 
+                                         {
+                                            "type": "bracket_left"
+                                        }, 
+                                        {
+                                            "type": "bracket_right"
+                                        }, 
+                                        {
+                                            "type": "ret"
+                                        }, 
+                                        {
+                                            "type": "a"
+                                        }, 
+                                        {
+                                            "type": "s"
+                                        }, 
+                                        {
+                                            "type": "d"
+                                        }, 
+                                        {
+                                            "type": "f"
+                                        }, 
+                                        {
+                                            "type": "g"
+                                        }, 
+                                        {
+                                            "type": "h"
+                                        }, 
+                                        {
+                                            "type": "j"
+                                        }, 
+                                        {
+                                            "type": "k"
+                                        }, 
+                                        {
+                                            "type": "l"
+                                        }, 
+                                        {
+                                            "type": "semicolon"
+                                        }, 
+                                        {
+                                            "type": "apostrophe"
+                                         }, 
+                                        {
+                                            "type": "grave_accent"
+                                        }, 
+                                        {
+                                            "type": "backslash"
+                                        }, 
+                                        {
+                                            "type": "z"
+                                        }, 
+                                        {
+                                            "type": "x"
+                                        }, 
+                                        {
+                                            "type": "c"
+                                        }, 
+                                        {
+                                            "type": "v"
+                                        }, 
+                                        {
+                                            "type": "b"
+                                        }, 
+                                        {
+                                            "type": "n"
+                                        }, 
+                                        {
+                                            "type": "m"
+                                        }, 
+                                        {
+                                            "type": "comma"
+                                        }, 
+                                        {
+                                            "type": "dot"
+                                        }, 
+                                        {
+                                            "type": "slash"
+                                        }, 
+                                        {
+                                            "type": "asterisk"
+                                        }, 
+                                        {
+                                            "type": "spc"
+                                         }, 
+                                        {
+                                            "type": "caps_lock"
+                                        }, 
+                                        {
+                                            "type": "f1"
+                                        }, 
+                                        {
+                                            "type": "f2"
+                                        }, 
+                                        {
+                                            "type": "f3"
+                                        }, 
+                                        {
+                                            "type": "f4"
+                                        }, 
+                                        {
+                                            "type": "f5"
+                                        }, 
+                                        {
+                                            "type": "f6"
+                                        }, 
+                                        {
+                                            "type": "f7"
+                                        }, 
+                                        {
+                                            "type": "f8"
+                                        }, 
+                                        {
+                                            "type": "f9"
+                                        }, 
+                                        {
+                                            "type": "f10"
+                                        }, 
+                                        {
+                                            "type": "num_lock"
+                                        }, 
+                                        {
+                                            "type": "scroll_lock"
+                                        }, 
+                                        {
+                                            "t ype": "kp_divide"
+                                        }, 
+                                        {
+                                            "type": "kp_multiply"
+                                        }, 
+                                        {
+                                            "type": "kp_subtract"
+                                        }, 
+                                        {
+                                            "type": "kp_add"
+                                        }, 
+                                        {
+                                            "type": "kp_enter"
+                                        }, 
+                                        {
+                                            "type": "kp_decimal"
+                                        }, 
+                                        {
+                                            "type": "sysrq"
+                                        }, 
+                                        {
+                                            "type": "kp_0"
+                                        }, 
+                                        {
+                                            "type": "kp_1"
+                                        }, 
+                                        {
+                                            "type": "kp_2"
+                                        }, 
+                                        {
+                                            "type": "kp_3"
+                                        }, 
+                                        {
+                                            "type": "kp_4"
+                                        }, 
+                                        {
+                                            "type": "kp_5"
+                                        }, 
+                                        {
+                                            "type": "kp_6"
+                                        }, 
+                                         {
+                                            "type": "kp_7"
+                                        }, 
+                                        {
+                                            "type": "kp_8"
+                                        }, 
+                                        {
+                                            "type": "kp_9"
+                                        }, 
+                                        {
+                                            "type": "less"
+                                        }, 
+                                        {
+                                            "type": "f11"
+                                        }, 
+                                        {
+                                            "type": "f12"
+                                        }, 
+                                        {
+                                            "type": "print"
+                                        }, 
+                                        {
+                                            "type": "home"
+                                        }, 
+                                        {
+                                            "type": "pgup"
+                                        }, 
+                                        {
+                                            "type": "pgdn"
+                                        }, 
+                                        {
+                                            "type": "end"
+                                        }, 
+                                        {
+                                            "type": "left"
+                                        }, 
+                                        {
+                                            "type": "up"
+                                        }, 
+                                        {
+                                            "type": "down"
+                                        }, 
+                                         {
+                                            "type": "right"
+                                        }, 
+                                        {
+                                            "type": "insert"
+                                        }, 
+                                        {
+                                            "type": "delete"
+                                        }, 
+                                        {
+                                            "type": "stop"
+                                        }, 
+                                        {
+                                            "type": "again"
+                                        }, 
+                                        {
+                                            "type": "props"
+                                        }, 
+                                        {
+                                            "type": "undo"
+                                        }, 
+                                        {
+                                            "type": "front"
+                                        }, 
+                                        {
+                                            "type": "copy"
+                                        }, 
+                                        {
+                                            "type": "open"
+                                        }, 
+                                        {
+                                            "type": "paste"
+                                        }, 
+                                        {
+                                            "type": "find"
+                                        }, 
+                                        {
+                                            "type": "cut"
+                                        }, 
+                                        {
+                                            "type": "lf"
+                                         }, 
+                                        {
+                                            "type": "help"
+                                        }, 
+                                        {
+                                            "type": "meta_l"
+                                        }, 
+                                        {
+                                            "type": "meta_r"
+                                        }, 
+                                        {
+                                            "type": "compose"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "key": "number", 
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "key": "hold-time", 
+                    "optional": true, 
+                    "type": "int"
+                }
+            ]
+        }, 
+        {
+            "name": "screendump", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "filename", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "nbd-server-start", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "addr", 
+                    "type": "SocketAddress", 
+                    "data": [
+                        {
+                            "key": "fd", 
+                            "type": "String", 
+                            "data": [
+                                {
+                                    "key": "str", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                         {
+                            "key": "unix", 
+                            "type": "UnixSocketAddress", 
+                            "data": [
+                                {
+                                    "key": "path", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "inet", 
+                            "type": "InetSocketAddress", 
+                            "data": [
+                                {
+                                    "key": "port", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "ipv6", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "ipv4", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "host", 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "to", 
+                                    "optional": true, 
+                                    "type": "uint16"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "nbd-server-add", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "device", 
+                    "type": "str"
+                }, 
+                {
+                    "key": "writable", 
+                    "optional": tru e, 
+                    "type": "bool"
+                }
+            ]
+        }, 
+        {
+            "name": "nbd-server-stop", 
+            "type": "Command"
+        }, 
+        {
+            "name": "chardev-add", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "key": "pty", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ], 
+            "data": [
+                {
+                    "key": "backend", 
+                    "type": "ChardevBackend", 
+                    "data": [
+                        {
+                            "key": "serial", 
+                            "type": "ChardevHostdev", 
+                            "data": [
+                                {
+                                    "key": "device", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "spiceport", 
+                            "type": "ChardevSpicePort", 
+                            "data": [
+                                {
+                                    "key": "fqdn", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "stdio", 
+                            "type": "ChardevStdio", 
+                            "data": [
+                                {
+                                    "key": "signal", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "memory", 
+                            "type": "ChardevMemory", 
+                            " data": [
+                                {
+                                    "key": "size", 
+                                    "optional": true, 
+                                    "type": "int"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "socket", 
+                            "type": "ChardevSocket", 
+                            "data": [
+                                {
+                                    "key": "wait", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "server", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "addr", 
+                                    "type": "SocketAddress", 
+                                    "data": [
+                                        {
+                                            "key": "fd", 
+                                            "type": "String", 
+                                            "data": [
+                                                {
+                                                    "key": "str", 
+                                                    "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "unix", 
+                                            "type": "UnixSocketAddress", 
+                                            "data": [
+                                                {
+                                                    "key": "path", 
+                                                     "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "inet", 
+                                            "type": "InetSocketAddress", 
+                                            "data": [
+                                                {
+                                                    "key": "port", 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "ipv6", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "ipv4", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "host", 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "to", 
+                                                    "optional": true, 
+                                                    "type": "uint16"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }, 
+                                 {
+                                    "key": "nodelay", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }, 
+                                {
+                                    "key": "telnet", 
+                                    "optional": true, 
+                                    "type": "bool"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "msmouse", 
+                            "type": "ChardevDummy"
+                        }, 
+                        {
+                            "key": "pty", 
+                            "type": "ChardevDummy"
+                        }, 
+                        {
+                            "key": "braille", 
+                            "type": "ChardevDummy"
+                        }, 
+                        {
+                            "key": "udp", 
+                            "type": "ChardevUdp", 
+                            "data": [
+                                {
+                                    "key": "remote", 
+                                    "type": "SocketAddress", 
+                                    "data": [
+                                        {
+                                            "key": "fd", 
+                                            "type": "String", 
+                                            "data": [
+                                                {
+                                                    "key": "str", 
+                                                    "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "unix", 
+                                            "type": "UnixSocketAddress ", 
+                                            "data": [
+                                                {
+                                                    "key": "path", 
+                                                    "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "inet", 
+                                            "type": "InetSocketAddress", 
+                                            "data": [
+                                                {
+                                                    "key": "port", 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "ipv6", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "ipv4", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "host", 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "to", 
+                                                    "optional": true, 
+                                                    "type": "uint16"
+                                                }
+                                             ]
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "key": "local", 
+                                    "optional": true, 
+                                    "type": "SocketAddress", 
+                                    "data": [
+                                        {
+                                            "key": "fd", 
+                                            "type": "String", 
+                                            "data": [
+                                                {
+                                                    "key": "str", 
+                                                    "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "unix", 
+                                            "type": "UnixSocketAddress", 
+                                            "data": [
+                                                {
+                                                    "key": "path", 
+                                                    "type": "str"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "inet", 
+                                            "type": "InetSocketAddress", 
+                                            "data": [
+                                                {
+                                                    "key": "port", 
+                                                    "type": "str"
+                                                }, 
+                                                 {
+                                                    "key": "ipv6", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "ipv4", 
+                                                    "optional": true, 
+                                                    "type": "bool"
+                                                }, 
+                                                {
+                                                    "key": "host", 
+                                                    "type": "str"
+                                                }, 
+                                                {
+                                                    "key": "to", 
+                                                    "optional": true, 
+                                                    "type": "uint16"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "mux", 
+                            "type": "ChardevMux", 
+                            "data": [
+                                {
+                                    "key": "chardev", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "console", 
+                            "type": "ChardevDummy"
+                        }, 
+                        {
+                            "key": "parallel", 
+                            "type": "ChardevHostdev", 
+                             "data": [
+                                {
+                                    "key": "device", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "null", 
+                            "type": "ChardevDummy"
+                        }, 
+                        {
+                            "key": "file", 
+                            "type": "ChardevFile", 
+                            "data": [
+                                {
+                                    "key": "in", 
+                                    "optional": true, 
+                                    "type": "str"
+                                }, 
+                                {
+                                    "key": "out", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "spicevmc", 
+                            "type": "ChardevSpiceChannel", 
+                            "data": [
+                                {
+                                    "key": "type", 
+                                    "type": "str"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "vc", 
+                            "type": "ChardevVC", 
+                            "data": [
+                                {
+                                    "key": "cols", 
+                                    "optional": true, 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "width", 
+                                    "optional": true, 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "rows", 
+                                    "optional": true, 
+                                    "type": "int"
+                                }, 
+                                {
+                                    "key": "height", 
+                                    "optional": true, 
+                                    "type": "int"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "pipe", 
+                            "type": "ChardevHostdev", 
+                            "data": [
+                                {
+                                    "key": "device", 
+                                    "type": "str"
+                                }
+                            ]
+                         }
+                    ]
+                }, 
+                {
+                    "key": "id", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "chardev-remove", 
+            "type": "Command", 
+            "data": [
+                {
+                    "key": "id", 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-tpm-models", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "TpmModel", 
+                    "data": [
+                        {
+                            "type": "tpm-tis"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-tpm-types", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "TpmType", 
+                    "data": [
+                        {
+                            "type": "passthrough"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-tpm", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "TPMInfo", 
+                    "data": [
+                        {
+                            "key": "model", 
+                            "type": "TpmModel", 
+                            "data": [
+                                {
+                                    "type": "tpm-tis"
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "options", 
+                            "type": "TpmTypeOptions", 
+                            "data": [
+                                {
+                                    "key": "passthrough", 
+                                    "type": "TPMPassthroug hOptions", 
+                                    "data": [
+                                        {
+                                            "key": "path", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "cancel-path", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "id", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "query-command-line-options", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "CommandLineOptionInfo", 
+                    "data": [
+                        {
+                            "key": "parameters", 
+                            "data": [
+                                {
+                                    "type": "CommandLineParameterInfo", 
+                                    "data": [
+                                        {
+                                            "key": "name", 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "help", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "type", 
+                                            "type": "CommandLineParameterType", 
+                                            "data": [
+                                                {
+                                                    "type": "string"
+                                                }, 
+                                                {
+                                                    "type": "boolean"
+                                                }, 
+                                                {
+                                                    "type": "number"
+                                                }, 
+                                                {
+                                                    "type": "size"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "option", 
+                            "type": "str"
+                        }
+                    ]
+                }
+            ], 
+            "data": [
+                {
+                    "key": "option", 
+                    "optional": true, 
+                    "type": "str"
+                }
+            ]
+        }, 
+        {
+            "name": "query-qmp-schema", 
+            "type": "Command", 
+            "returns": [
+                {
+                    "type": "SchemaEntry", 
+                    "data": [
+                        {
+                            "key": "data", 
+                            "optional": true, 
+                            "data": [
+                                {
+                                    "type": "DataObject", 
+                                    "data": [
+                                        {
+                                            "key": "data", 
+                                            "optional": true, 
+                                            "data": [
+                                                {
+                                                    "type": "DataObject"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "type", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "optional", 
+                                            "optional": true, 
+                                            "type": "bool"
+                                        }, 
+                                        {
+                                            "key": "key", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "name", 
+                            "type": "str"
+                        }, 
+                        {
+                            "key": "returns", 
+                            "optional": true, 
+                            "data": [
+                                {
+                                    "type": "DataObject", 
+                                    "data": [
+                                        {
+                                            "key": "data", 
+                                            "optional": true, 
+                                            "data": [
+                                                {
+                                                    "type": "DataObject"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "key": "type", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }, 
+                                        {
+                                            "key": "optional", 
+                                            "optional": true, 
+                                            "type": "bool"
+                                        }, 
+                                        {
+                                            "key": "key", 
+                                            "optional": true, 
+                                            "type": "str"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "key": "type", 
+                            "type": "SchemaMetaType", 
+                            "data": [
+                                {
+                                    "type": "Command"
+                                }, 
+                                {
+                                    "type": "Type"
+                                }, 
+                                {
+                                    "type": "Enumeration"
+                                }, 
+                                {
+                                    "type": "Union"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
